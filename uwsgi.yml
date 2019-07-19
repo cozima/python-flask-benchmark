@@ -1,0 +1,16 @@
+uwsgi:
+  master: true
+  http-socket: :80
+  processes: 2
+  module: app
+  callable: app
+  enable-threads: true
+  single-interpreter: true
+  socket: /tmp/%n.sock
+  alarm-segfault: segfault
+  thunder-lock:  true
+  stats: /tmp/stats.sock
+  memory-report: true
+  ignore-sigpipe: true
+  ignore-write-errors: true
+  disable-write-exception: true
